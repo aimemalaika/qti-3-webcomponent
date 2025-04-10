@@ -6,20 +6,19 @@ Vue.config.productionTip = false
 class QtiPlayerElement extends HTMLElement {
   constructor() {
     super()
-    this.attachShadow({ mode: 'open' }) // Attach Shadow DOM
+    this.attachShadow({ mode: 'open' })
   }
 
   connectedCallback() {
     const mountPoint = document.createElement('div')
     this.shadowRoot.appendChild(mountPoint)
 
-    // Clone all <style> tags into shadow DOM
     const styleNodes = document.querySelectorAll('style')
     styleNodes.forEach(style => {
       this.shadowRoot.appendChild(style.cloneNode(true))
     })
 
-    // Mount Vue into shadow root
+
     new Vue({
       render: h => h(App)
     }).$mount(mountPoint)
