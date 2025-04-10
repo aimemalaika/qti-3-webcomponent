@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 import Qti3Player from '@/Qti3Player.vue'
 import { PnpFactory } from '@/shared/helpers/PnpFactory'
 import { SessionControlFactory } from '@/shared/helpers/SessionControlFactory'
@@ -303,4 +304,5 @@ export default {
 </script>
 
 <style>
+
 </style>
